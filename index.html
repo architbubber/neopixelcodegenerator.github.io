@@ -26,7 +26,7 @@ Enter Columns :<input type="text" id="column">
 <button class="w3-pink" onclick=getColored()>Get Answer</button>
 <input type="color" id="color" value="#00a3d7">Choose Color</input>
 <button class="w3-pink" onclick=clearAll()>Clear All Selections</button>
-<button class="w3-pink" onclick=delAll()>Clear Screen</button>
+<button class="w3-pink" onclick="window.location.reload()">Clear Screen</button>
 </div>
 </div>
 
@@ -95,11 +95,6 @@ else{
 	alert(ans+'\n'+r+'\n'+g+'\n'+b);
 }
 }	
-function delAll(){
-	for(var i=0;i<button.length;i++){
-		document.getElementById(String(i)).remove();
-		}
-	}
 </script>
 </div>
 </body>
