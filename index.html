@@ -55,6 +55,10 @@ Enter Columns :<input type="text" id="column">
 <script>
 var button=[];
 function normal(total,rows,columns){
+butclass="button";
+if(total>2500){
+butclass="buttonsmall";
+}
 var x=0,j=0;
 for(var i=0;i<total;i++){
 	if(i%columns==0 && i!=0){
@@ -65,7 +69,7 @@ for(var i=0;i<total;i++){
 	button[i] = document.createElement("button");
 //	button[i].innerHTML="led";//String(x);
 	button[i].id=String(x);
- 	button[i].className= "button button5";
+ 	button[i].className= butclass;
 	button[i].onclick= function() {
     if(	this.style.backgroundColor!="lightgrey"){
     	this.style.backgroundColor= "lightgrey";
