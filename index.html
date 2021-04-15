@@ -2,6 +2,27 @@
 <html>
 <head><link rel="stylesheet" href="my.css" >
 <link rel="stylesheet" href="w3.css" >
+<link href="https://fonts.googleapis.com/css?family=Luckiest Guy" rel="stylesheet" type="text/css"/>
+<style>
+
+.glow {
+  font-size: 80px;
+  color: Lightblue;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+  }
+  
+  to {
+    text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px black, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white;
+  }
+}
+</style>
+
 </head>
 <title>NeoPixel Code Generator Api</title>
 </head>
@@ -10,7 +31,7 @@
 
 <div class="w3-container">
 <div class="w3-center w3-black">
-<H1>NeoPixel Code Generator </h1>
+<H1 class="glow" style=" font-family:luckiest guy;">NeoPixel Code Generator</h1>
 <H5>By Archit Bubber<h5>
 </div>
 </div>
@@ -83,7 +104,7 @@ for(var i=0;i<button.length;i++){
 	b+=`${res} ,`;
 	}
 }
-if(ans.length==0){
+if(ans.length==7){
 alert("no selections made");
 }
 else{
