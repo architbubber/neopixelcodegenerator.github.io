@@ -21,10 +21,12 @@ Enter total pixels Count :<input type="text" id="total">
 Enter Rows :<input type="text" id="row">
 Enter Columns :<input type="text" id="column">
 <br><br><br>
-<button class="w3-pink" onclick=normal(document.getElementById('total').value,document.getElementById('row').value,document.getElementById('column').value)>Serpentine shape</button>
+<!--button class="w3-pink" onclick=normal(document.getElementById('total').value,document.getElementById('row').value,document.getElementById('column').value)>Serpentine shape</button-->
+<button class="w3-pink" onclick=normal(300,25,12)>Serpentine shape</button>
 <button class="w3-pink" onclick=getColored()>Get Answer</button>
 <input type="color" id="color" value="#00a3d7">Choose Color</input>
-<button class="w3-pink" onclick=clearAll()>Clear All</button>
+<button class="w3-pink" onclick=clearAll()>Clear All Selections</button>
+<button class="w3-pink" onclick=delAll()>Clear Screen</button>
 </div>
 </div>
 
@@ -63,27 +65,41 @@ for(var i=0;i<button.length;i++){
     }
 }
 function getColored(){
-var ans="";
-var r="",g="",b="";
+var ans="Leds ={";
+var r="R = {",g="G ={",b="B ={";
 for(var i=0;i<button.length;i++){
 	if(document.getElementById(String(i)).style.backgroundColor!="lightgrey"){
 		ans+=`${i} ,`;
-        r+=`${document.getElementById(String(i)).style.backgroundColor.split(",")} ,`;
-         g+=`${document.getElementById(String(i)).style.backgroundColor.split(",")} ,`;
-
-
- b+=`${document.getElementById(String(i)).style.backgroundColor.split(",")} ,`;
-
-
+        var n = document.getElementById(String(i)).style.backgroundColor.search(",");
+	var str=document.getElementById(String(i)).style.backgroundColor;
+        r+=`${str.slice(4,n)} ,`;
+	str=str.substring(n+1);
+	n=str.search(",");
+	res=str.slice(0,n)
+        g+=`${str.slice(0,n)},`;
+	str=str.substring(n+1);
+	n=str.search(",");
+	res=str.slice(0,n);
+	b+=`${res} ,`;
 	}
 }
 if(ans.length==0){
 alert("no selections made");
 }
 else{
-alert(ans+'\n'+r+'\n'+g+'\n'+b);
+	ans=ans.slice(0,-1)+'}';
+	r=r.slice(0,-1)+'}';
+	g=g.slice(0,-1)+'}';
+	b=b.slice(0,-1)+'}';
+
+	alert(ans+'\n'+r+'\n'+g+'\n'+b);
 }
 }	
+function delAll(){
+	for(var i=0;i<button.length;i++){
+		document.getElementById(String(i)).remove();
+		}
+	}
 </script>
 </div>
 </body>
