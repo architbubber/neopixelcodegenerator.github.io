@@ -20,8 +20,19 @@ button {
   font-size: 4px;
   margin: 4px 2px;
   cursor: pointer;
-  z-index:100;
-
+  border-radius: 50%;
 }
-.button5 {border-radius: 50%;}
+.buttonsmall {
+  background-color:grey;
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 4px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
 
