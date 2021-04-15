@@ -21,6 +21,14 @@
     text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px black, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white;
   }
 }
+.byline {
+ margin-left:60%;
+ margin-top:-50px;
+ font-size:30px;
+ color:Maroon;
+ font-family:luckiest guy;
+
+	 }
 </style>
 
 </head>
@@ -32,22 +40,22 @@
 <div class="w3-container">
 <div class="w3-center w3-black">
 <H1 class="glow" style=" font-family:luckiest guy;">NeoPixel Code Generator</h1>
-<H5>By Archit Bubber<h5>
+<H5 class="byline glow">By : Archit Bubber<h5>
 </div>
 </div>
 
 <div class="w3-container">
 <div class="w3-black">
-Enter total pixels Count :<input type="text" id="total">
-Enter Rows :<input type="text" id="row">
-Enter Columns :<input type="text" id="column">
+Enter total pixels Count :<input style="border-radius: 20px;" type="text" id="total">
+Enter Rows :<input style="border-radius: 20px;" type="text" id="row">
+Enter Columns :<input style="border-radius: 20px;" type="text" id="column">
 <br><br><br>
-<button class="w3-pink" onclick=normal(Number(document.getElementById('total').value),Number(document.getElementById('row').value),Number(document.getElementById('column').value))>Serpentine shape</button>
+<button class="w3-pink" style="border-radius: 20px;" onclick=normal(Number(document.getElementById('total').value),Number(document.getElementById('row').value),Number(document.getElementById('column').value))>Serpentine shape</button>
 <!--button class="w3-pink" onclick=normal(300,25,12)>Serpentine shape</button-->
-<button class="w3-pink" onclick=getColored()>Get Answer</button>
+<button class="w3-pink" style="border-radius: 20px;" onclick=getColored()>Get Answer</button>
 <input type="color" id="color" value="#00a3d7">Choose Color</input>
-<button class="w3-pink" onclick=clearAll()>Clear All Selections</button>
-<button class="w3-pink" onclick="window.location.reload()">Clear Screen</button>
+<button class="w3-pink" style="border-radius: 20px;" onclick=clearAll()>Clear All Selections</button>
+<button class="w3-pink" style="border-radius: 20px;" onclick="window.location.reload()">Clear Screen</button>
 </div>
 </div>
 
