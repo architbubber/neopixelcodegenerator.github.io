@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="my.css" >
+<link rel="stylesheet" href="w3.css" >
+</head>
+<title>NeoPixel Code Generator Api</title>
+</head>
+<body style="background-color:black;background-size:1400px 800px;background-repeat: no-repeat; background-image:url('https://www.ksat.com/resizer/9LEK06ElRb1t7SUcAcYMMGo445g=/1600x900/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/RRO7OPXMGFGVVHBCULRMLKZL7Y.jpg');">
+
+
+<div class="w3-container">
+<div class="w3-center w3-black">
+<H1>NeoPixel Code Generator </h1>
+<H5>By Archit Bubber<h5>
+</div>
+</div>
+
+<div class="w3-container">
+<div class="w3-black">
+Enter total pixels Count :<input type="text" id="total">
+Enter Rows :<input type="text" id="row">
+Enter Columns :<input type="text" id="column">
+<br><br><br>
+<button class="w3-pink" onclick=normal(document.getElementById('total').value,document.getElementById('row').value,document.getElementById('column').value)>Serpentine shape</button>
+<button class="w3-pink" onclick=getColored()>Get Answer</button>
+<input type="color" id="color" value="#00a3d7">Choose Color</input>
+<button class="w3-pink" onclick=clearAll()>Clear All</button>
+</div>
+</div>
+
+<div id="cont" class="w3-center w3-container ">
+<script>
+var button=[];
+function normal(total,rows,columns){
+var x=0,j=0;
+for(var i=0;i<total;i++){
+	if(i%columns==0 && i!=0){
+	j+=1;
+	x=j;
+	document.getElementById('cont').appendChild(document.createElement('br'));
+	}
+	button[i] = document.createElement("button");
+//	button[i].innerHTML="led";//String(x);
+	button[i].id=String(x);
+ 	button[i].className= "button button5";
+	button[i].onclick= function() {
+    if(	this.style.backgroundColor!="lightgrey"){
+    	this.style.backgroundColor= "lightgrey";
+        }
+        else{
+    var color=document.getElementById('color').value;
+	this.style.backgroundColor= color;
+    }
+	    };  
+    button[i].style.backgroundColor="lightgrey";
+	document.getElementById('cont').appendChild(button[i]);
+	x=x+rows;
+}
+}
+function clearAll(){
+for(var i=0;i<button.length;i++){
+	button[i].style.backgroundColor= "lightgrey";
+    }
+}
+function getColored(){
+var ans="";
+var r="",g="",b="";
+for(var i=0;i<button.length;i++){
+	if(document.getElementById(String(i)).style.backgroundColor!="lightgrey"){
+		ans+=`${i} ,`;
+        r+=`${document.getElementById(String(i)).style.backgroundColor.split(",")} ,`;
+         g+=`${document.getElementById(String(i)).style.backgroundColor.split(",")} ,`;
+
+
+ b+=`${document.getElementById(String(i)).style.backgroundColor.split(",")} ,`;
+
+
+	}
+}
+if(ans.length==0){
+alert("no selections made");
+}
+else{
+alert(ans+'\n'+r+'\n'+g+'\n'+b);
+}
+}	
+</script>
+</div>
+</body>
+</html>
+
+
+

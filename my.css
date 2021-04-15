@@ -1,0 +1,27 @@
+body {
+  padding: 20px;
+}
+button {
+  margin-top: 20px;
+  line-height: 60px;
+  font-weight: bold;
+  padding: 0 40px;
+  border: none;
+}
+
+.button {
+  background-color:grey;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 4px;
+  margin: 4px 2px;
+  cursor: pointer;
+  z-index:100;
+
+}
+.button5 {border-radius: 50%;}
+
