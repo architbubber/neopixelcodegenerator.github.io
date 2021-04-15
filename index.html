@@ -42,8 +42,8 @@ Enter total pixels Count :<input type="text" id="total">
 Enter Rows :<input type="text" id="row">
 Enter Columns :<input type="text" id="column">
 <br><br><br>
-<!--button class="w3-pink" onclick=normal(document.getElementById('total').value,document.getElementById('row').value,document.getElementById('column').value)>Serpentine shape</button-->
-<button class="w3-pink" onclick=normal(300,25,12)>Serpentine shape</button>
+<button class="w3-pink" onclick=normal(Number(document.getElementById('total').value),Number(document.getElementById('row').value),Number(document.getElementById('column').value))>Serpentine shape</button>
+<!--button class="w3-pink" onclick=normal(300,25,12)>Serpentine shape</button-->
 <button class="w3-pink" onclick=getColored()>Get Answer</button>
 <input type="color" id="color" value="#00a3d7">Choose Color</input>
 <button class="w3-pink" onclick=clearAll()>Clear All Selections</button>
